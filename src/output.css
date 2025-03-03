@@ -673,20 +673,24 @@ video {
 
 .card-achievment {
   width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .card-achievment img {
   margin-left: auto;
   margin-right: auto;
   width: 6rem;
-  border-radius: 9999px;
+  border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1));
+  padding: 0.5rem;
 }
 
 @media (min-width: 1280px) {
   .card-achievment img {
     width: 7rem;
+    padding: 1rem;
   }
 }
 
@@ -694,15 +698,15 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.25rem;
   text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 700;
 }
 
 @media (min-width: 1280px) {
   .card-achievment h2 {
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -1149,6 +1153,10 @@ video {
 
 .pb-16 {
   padding-bottom: 4rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pb-20 {

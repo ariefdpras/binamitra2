@@ -67,15 +67,15 @@ body {
   }
 
   .card-achievment {
-    @apply w-full;
+    @apply w-full max-w-fit;
   }
 
   .card-achievment img {
-    @apply w-24 xl:w-28 mx-auto bg-yellow-300 rounded-full;
+    @apply w-24 xl:w-28 mx-auto xl:p-4 p-2 bg-yellow-300 rounded-xl;
   }
 
   .card-achievment h2 {
-    @apply pt-2 pb-1 xl:pt-4 xl:pb-4 font-bold text-xl text-center xl:text-2xl;
+    @apply pt-2 pb-1 xl:pt-4 xl:pb-3 font-mono text-xl text-center xl:text-2xl;
   }
 
   .card-achievment h3 {
