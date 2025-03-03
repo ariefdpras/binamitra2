@@ -673,8 +673,6 @@ video {
 
 .card-achievment {
   width: 100%;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 
 .card-achievment img {

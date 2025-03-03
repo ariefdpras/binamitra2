@@ -67,7 +67,7 @@ body {
   }
 
   .card-achievment {
-    @apply w-full max-w-fit;
+    @apply w-full;
   }
 
   .card-achievment img {
