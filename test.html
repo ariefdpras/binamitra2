@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Produk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="relative w-80 overflow-hidden">
+      <!-- Container Produk -->
+      <div id="carousel" class="flex transition-transform duration-300">
+        <div class="w-80 flex-shrink-0 p-4 bg-white rounded-lg shadow-lg">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Produk 1"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h3 class="mt-2 text-lg font-semibold">Produk 1</h3>
+          <p class="text-gray-600">Deskripsi produk 1</p>
+        </div>
+        <div class="w-80 flex-shrink-0 p-4 bg-white rounded-lg shadow-lg">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Produk 2"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h3 class="mt-2 text-lg font-semibold">Produk 2</h3>
+          <p class="text-gray-600">Deskripsi produk 2</p>
+        </div>
+        <div class="w-80 flex-shrink-0 p-4 bg-white rounded-lg shadow-lg">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Produk 3"
+            class="w-full h-40 object-cover rounded"
+          />
+          <h3 class="mt-2 text-lg font-semibold">Produk 3</h3>
+          <p class="text-gray-600">Deskripsi produk 3</p>
+        </div>
+      </div>
+
+      <!-- Tombol Navigasi -->
+      <button
+        id="prev"
+        class="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-gray-800 text-white rounded-full"
+      >
+        ◀
+      </button>
+      <button
+        id="next"
+        class="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-gray-800 text-white rounded-full"
+      >
+        ▶
+      </button>
+    </div>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+
+      let index = 0;
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      next.addEventListener("click", () => {
+        if (index < carousel.children.length - 1) {
+          index++;
+          updateCarousel();
+        }
+      });
+
+      prev.addEventListener("click", () => {
+        if (index > 0) {
+          index--;
+          updateCarousel();
+        }
+      });
+    </script>
+  </body>
+</html>

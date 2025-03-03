@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT. Bina Mitra Analitika</title>
+    <!-- logo website -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/bma_r.png" />
+    <link href="src/output.css" rel="stylesheet" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <!-- feather icon -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <div class="flex px-4">
+              <span
+                class="flex gap-2 font-bold text-lg text-black py-5 dark:text-white"
+              >
+                <a href="index.html">
+                  <img src="img/bma3.png" alt="emp" width="380px"
+                /></a>
+               
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+              ></span>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-secondary dark:text-white"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-secondary dark:text-white"
+                    >About Us</a
+                  >
+                </li>
+                <div class="relative inline-block text-left">
+                  <div class="group">
+                    <button
+                      id="product-button"
+                      type="button"
+                      class="inline-flex justify-center items-center w-full mx-4 py-2 text-base text-dark group-hover:text-secondary focus:outline-none"
+                    >
+                      Product
+                      <!-- Dropdown arrow -->
+                      <svg
+                        class="w-4 h-4 ml-2 -mr-1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
+                      </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div
+                      class="absolute left-0 w-40 mt-1 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300"
+                    >
+                      <div class="sub-menu py-1">
+                        <a
+                          href="#"
+                          class="block px-4 py-2 text-sm text-dark hover:bg-yellow-100"
+                          >Option 1</a
+                        >
+                        <a
+                          href="#"
+                          class="block px-4 py-2 text-sm text-dark hover:bg-secondary hover:bg-opacity-5"
+                          >Option 2</a
+                        >
+                        <a
+                          href="#"
+                          class="block px-4 py-2 text-sm text-dark hover:bg-secondary hover:bg-opacity-5"
+                          >Option 3</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-secondary dark:text-white"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Navbar End -->
+
+    <!-- Hero Section start -->
+    <section id="hero" class="pt-24 pb-6 lg:pb-10">
+      <!-- <div class="bg-gray-100 flex sm:pt-0 items-center justify-center h-screen"> -->
+      <div class="carousel relative w-full p-4 items-center justify-center overflow-hidden rounded-lg">
+        <!-- Carousel Inner -->
+        <div
+          class="carousel-inner flex transition-transform duration-500 ease-in-out"
+        >
+          <div class="carousel-item p-4 xl:p-6 w-full flex-shrink-0">
+            <img src="img/lab4.jpg" alt="Image 1" class="rounded-lg w-full" />
+          </div>
+          <div class="carousel-item p-4 xl:p-6 w-full flex-shrink-0">
+            <img src="img/lab-2.jpg" alt="Image 2" class="rounded-lg w-full" />
+          </div>
+          <div class="carousel-item p-4 xl:p-6 w-full flex-shrink-0">
+            <img src="img/lab5.jpg" alt="Image 3" class="rounded-lg w-full" />
+          </div>
+        </div>
+  
+        <!-- Navigation Buttons -->
+        <button
+          class="carousel-control-prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70"
+          onclick="prevSlide()"
+        >
+          &#10094;
+          <!-- Left Arrow -->
+        </button>
+        <button
+          class="carousel-control-next absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70"
+          onclick="nextSlide()"
+        >
+          &#10095;
+          <!-- Right Arrow -->
+        </button>
+      </div>
+    </div>
+    </section>
+
+    <!-- <section
+      id="home"
+      class="pt-36 dark:bg-dark transition ease-in-out duration-500"
+    >
+      <style>
+        .font-sans {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      </style>
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h1
+              class="text-5xl font-sans pr-16 mb-2 font-extrabold text-black md:text-2xl lg:text-3xl"
+            >
+              The Best Laboratory Product For You.
+            </h1>
+            <p
+              class="font-medium text-slate-500 mb-8 leading-relaxed lg:text-xl"
+            >
+              To be the best in Scientific and Laboratory Equipment industry, PT
+              Era Mitra Perdana is supported by highly qualified personnel, high
+              quality product, and optimum after sales service.
+            </p>
+            <button
+              type="button"
+              onclick="hubungi()"
+              class="text-base font-semibold rounded-md shadow-lg border mx-3 py-3 px-10 transition ease-in-out delay-150 bg-primary text-dark hover:translate-y-1 hover:scale-110 hover:bg-secondary hover:text-primary duration-300"
+            >
+              Whatsapp
+            </button>
+            <button
+              type="button"
+              onclick="hubungi()"
+              class="text-base font-semibold rounded-md shadow-lg border py-3 px-10 transition ease-in-out delay-150 bg-primary text-dark hover:translate-y-1 hover:scale-110 hover:bg-secondary hover:text-primary duration-300"
+            >
+              Product
+            </button>
+          </div>
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:mt-0 lg:right-0">
+              <img
+                src="img/hero.png"
+                alt="herosection"
+                class="max-w-full mx-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full mt-1">
+            <div class="flex flex-wrap justify-center items-center">
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/pertamina.png" alt="pertamina" />
+              </a>
+
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/bmkg.png" alt="bmkg" />
+              </a>
+
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/bppt.png" alt="bppt" />
+              </a>
+
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/klhk.png" alt="klhk" />
+              </a>
+
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/bpom.png" alt="bpom" />
+              </a>
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/lipi.png" alt="lipi" />
+              </a>
+              <a
+                href="#"
+                class="max-w-[180px] grayscale py-3 opacity-60 transition hover:grayscale-0 hover:opacity-100"
+              >
+                <img src="img/kf.png" alt="kf" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- Hero Section end -->
+
+    <!-- values section start -->
+    <section
+      id="values"
+      class="pt-2 pb-10 dark:bg-dark transition ease-in-out duration-500"
+    >
+    <hr class="mx-12 my-1 border-t-2 border-black">
+      <div class="container pb-16 pt-6 lg:pt-10">
+        <div class="flex flex-wrap ">
+          <div class="w-full self-center pt-10 px-4 lg:w-1/2">
+
+          <video autoplay loop muted src="img/lab-section.mp4" class="w-full aspect-video rounded-xl"></video>
+        </div>
+          
+        <div class="w-full pt-10 px-4 lg:w-1/2">
+          <style>
+            h2 {
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+          </style>
+          <h2 class="mx-4 font-bold text-2xl">The Best Products</h2>
+          <p class="pt-6 mx-4 text-base font-semibold text-dark">To be a global leader in providing innovative, high-quality laboratory equipment and solutions that empower scientific discovery, enhance research capabilities, and contribute to the advancement of science and technology.</p>
+          <div class="pt-6 mx-4 text-black text-base font-mono">
+            <p>To continuously develop and deliver cutting-edge laboratory tools and technologies that meet the evolving needs of researchers and scientists.</p>
+            <div class="pt-8">
+              
+            <button
+              type="button"
+              onclick="readMore()"
+              class=" text-primary text-base font-semibold flex rounded-md shadow-lg border py-3 px-12 transition ease-in-out delay-150 bg-yellow-600 hover:translate-y-1 hover:scale-110 hover:bg-primary hover:text-dark duration-300"
+            >Read More<i data-feather="arrow-right" stroke-width="3" class="w-4 mx-2"></i>
+              
+            </button>
+          </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+      <hr class="mx-12 my-1 border-t-2 border-black">
+    </section>
+    <!-- values section end -->
+
+    <!-- Section 3point Start -->
+    <section  id="point"
+    class="pt-8 pb-12 dark:bg-dark transition ease-in-out duration-500">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="max-w-xl mx-auto text-center mb-14">
+          <style>
+            .title {
+              font-family: serif;
+            }
+          </style>
+          <h4 class="title font-bold text-3xl text-black pb-6 lg:pb-10 lg:text-5xl">Our investment themes</h4>
+
+        </div>
+        <div class="flex flex-wrap text-center">
+          <div class="w-full px-2 py-4 xl:w-1/3 ">
+            <div class="card-point">
+               <img src="img/chemical-analysis.png" alt="globe" class="w-32 bg-slate-300 px-2 py-2 rounded-full mx-auto">
+               <div class="py-4 px-4">
+                <style>
+                  h4 {
+                    font-family: serif;
+                  }
+                </style>
+                <h4 class="font-semibold text-2xl text-black pb-6">Quality</h4>
+                <p class="text-base text-dark">To ensure the highest standards of quality and reliability in every product we offer, fostering trust and long-term partnerships with our customers.</p>
+               </div> 
+            </div>
+
+          </div>
+          <div class="w-full px-4 py-4 xl:w-1/3 ">
+            <div class="card-point">
+               <img src="img/customer-loyalty.png" alt="globe" width="24" class="w-32 bg-slate-300 px-2 py-2 rounded-full mx-auto">
+               <div class="py-4 px-4">
+                <h4 class="font-semibold text-2xl text-black pb-6">Customer Focus</h4>
+                <p class="text-base text-dark">To understand and address the unique needs of our clients by providing exceptional customer service, technical support, and customized solutions.</p>
+               </div> 
+            </div>
+
+          </div>
+          <div class="w-full px-4 py-4 xl:w-1/3 ">
+            <div class="card-point ">
+               <img src="img/customer.png" alt="globe" width="24" class="w-32 bg-slate-300 px-2 py-2 rounded-full mx-auto">
+               <div class="py-4 px-4">
+                <h4 class="font-semibold text-2xl text-black pb-6">Sustainability</h4>
+                <p class="text-base text-dark"> To promote sustainable practices in our operations and products, contributing to environmental preservation and responsible resource management.</p>
+               </div> 
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    </section>
+    <!-- Section 3point End -->
+
+    <!-- Section Highlight Product Start -->
+    <section id="highlight-product" class="pt-10 pb-20 bg-slate-200">
+      <div class="container mx-auto p-4">
+        <style>
+          .title-highlight {
+            font-family: serif;
+          }
+        </style>
+        <h1 class="title-highlight text-2xl font-serif text-start px-4 mb-4">Highlights Product</h1>
+        <div class="relative overflow-hidden">
+          <!-- Carousel Container -->
+          <div id="carousel-product" class="flex transition-transform duration-700 ease-in-out">
+            <!-- Product Cards -->
+            <div class="item-product">
+              <div class="product-inner">
+                <img
+                  src="img/product-1654459629909-removebg-preview.png"
+                  alt="Product 1"                  
+                />
+                <style>
+                  h2 {
+                    font-family: 'Times New Roman', Times, serif;
+                  }
+                </style>
+                <h2>Labtech LCO-065AI</h2>
+                <p>Deskripsi produk 1.</p>
+                
+              </div>
+            </div>
+            <div class="item-product">
+              <div class="product-inner">
+                <img
+                  src="img/product-1659529471602-removebg-preview.png"
+                  alt="Product 2"
+                />
+                <h2>Produk 2</h2>
+                <p >Deskripsi produk 2.</p>
+                
+              </div>
+            </div>
+            <div class="item-product">
+              <div class="product-inner">
+                <img
+                  src="img/product-1659529757832-removebg-preview.png"
+                  alt="Product 3"
+                />
+                <h2 >Produk 3</h2>
+                <p >Deskripsi produk 3.</p>
+                
+              </div>
+            </div>
+            <div class="item-product">
+              <div class="product-inner">
+                <img
+                  src="img/product-1659531028055-removebg-preview.png"
+                  alt="Product 4"/>
+                <h2 >Produk 4</h2>
+                <p >Deskripsi produk 4.</p>
+                
+              </div>
+            </div>
+            <div class="item-product">
+              <div class="product-inner">
+                <img
+                  src="img/product-1659531431057-removebg-preview.png"
+                  alt="Product 5"/>
+                <h2 >Produk 5</h2>
+                <p >Deskripsi produk 5.</p>
+                
+              </div>
+            </div>
+            <div class="item-product">
+              <div class="product-inner">
+                <img
+                  src="img/product-1660501379838-removebg-preview.png"
+                  alt="Product 6"/>
+                <h2 >Produk 6</h2>
+                <p >Deskripsi produk 6.</p>
+                
+              </div>
+            </div>
+            <!-- Tambahkan lebih banyak produk jika diperlukan -->
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button
+            id="prevBtn"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+          >
+            &lt;
+          </button>
+          <button
+            id="nextBtn"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
+          >
+            &gt;
+          </button>
+        </div>
+      </div>
+     </section> 
+    <!-- Section Highlight Product End -->
+
+    <!-- Section Baru START-->
+     <section id="" class="pt-20 pb-24">
+      <div class="container">
+        <div class="w-full px-4 border">
+          <div class="flex flex-wrap">
+            <div class="w-full xl:w-1/3 flex flex-col justify-center items-center">
+              <h2 class="px-1 text-xl font-mono text-dark">Achievment</h2>
+              <h1 class="px-1 text-3xl font-semibold text-black">Creating environments of possibility</h1>
+            </div>
+            <div class="flex mx-auto">
+            <div class="container-achievment">
+              <div class="card-achievment">
+                <img src="img/customer-service.png" alt="customer">
+                <h2>50+</h2>
+                <h3>Clients</h3>
+              </div>
+              </div>
+              <div class="container-achievment">
+              <div class="card-achievment">
+                <img src="img/customer-service.png" alt="customer">
+                <h2>30+</h2>
+                <h3>Year Experience</h3>
+              </div>
+            </div>
+            <div class="container-achievment">
+              <div class="card-achievment">
+                <img src="img/customer-service.png" alt="customer">
+                <h2>20+</h2>
+                <h3>Products</h3>
+              </div>
+            </div>
+          </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+     </section> 
+
+    <!-- Section Baru END-->
+
+    <!-- feather icon -->
+     <script>
+      feather.replace();
+     </script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
